@@ -1,5 +1,8 @@
 pipeline {
     agent {label "JDK17-MVN363"}
+    tools {
+        jdk 'JDK-8' 
+    }
     stages {
         stage("vcs"){
             steps {
