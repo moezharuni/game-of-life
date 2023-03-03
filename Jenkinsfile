@@ -1,6 +1,6 @@
 pipeline {
     agent {label "JDK17-MVN363"}
-    Stages {
+    stages {
         stage "vcs"{
             steps {
                 git url: "https://github.com/moezharuni/game-of-life.git",
