@@ -15,7 +15,7 @@ pipeline {
         stage("postbuildactions") {
             steps {
                 junit testResults : "**/surefire-reports/*.xml",
-                archive: Archive artifacts "**/target/gameoflife.war"
+                archive Archive artifacts: "**/target/gameoflife.war"
             }
         }
     }
