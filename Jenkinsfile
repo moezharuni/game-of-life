@@ -7,5 +7,8 @@ pipeline {
                 branch: 'declarative1'
             }
         }
+        stage ('build') {
+            sh 'mvn package'
+        }
     }
 }
