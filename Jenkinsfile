@@ -1,6 +1,9 @@
 pipeline {
     agent {label 'JDK17_MVN363'}
     triggers { pollSCM ('* * * * *')}
+    parameters {
+        choice(name: 'MAVEN_GOAL2', choices: ['package', 'install', 'test', 'compile'], description: 'Maven Options')
+    }
     stages {
         stage ('vcs') {
             steps {
@@ -10,7 +13,7 @@ pipeline {
         }
         stage ('build') {
             steps {
-                 sh 'export PATH="/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin:$PATH" && mvn package'
+                 sh "export PATH="/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin:$PATH" && mvn ${params.MAVEN_GOAL2}"
             }
         }
         stage ('tests'){
