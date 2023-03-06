@@ -13,5 +13,10 @@ pipeline {
                  sh 'export PATH="/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin:$PATH" && mvn package'
             }
         }
+        stage ('tests'){
+            steps{
+                junit testResults: '**/surefire-reports/*.xml'
+            }
+        }
     }
 }
