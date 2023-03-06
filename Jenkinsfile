@@ -1,5 +1,6 @@
 pipeline {
     agent {label 'JDK17_MVN363'}
+    triggers {'* * * * *'}
     stages {
         stage ('vcs') {
             steps {
