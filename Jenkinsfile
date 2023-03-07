@@ -26,9 +26,6 @@ pipeline {
                 archiveArtifacts artifacts: '**/target/gameoflife.war'
             }
         }
-        
-        stage ('email')
-        steps {
         post {
         success {
             mail subject: "Jenkins Build of ${JOB_NAME} with id ${BUILD_ID} is success",
@@ -43,6 +40,5 @@ pipeline {
                 from: 'devops@qt.com'
         }
     }
-        }
     }
 }
