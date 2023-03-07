@@ -26,5 +26,14 @@ pipeline {
                 archiveArtifacts artifacts: '**/target/gameoflife.war'
             }
         }
+        post {
+            success {
+                mail to:"mharuni@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "PASSED !!!"
+        }
+        failure {
+            mail to:"mharuni@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "FAILED !!!"
+        }
+            }
+        }
     }
 }
