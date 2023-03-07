@@ -33,6 +33,8 @@ pipeline {
         failure {
             mail to:"mharuni@gmail.com", subject:"FAILURE: Build2", body: "FAILED !!!"
         }
-            }
+
         }
+    
     }
+}
