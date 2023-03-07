@@ -28,10 +28,10 @@ pipeline {
         }
         post {
             success {
-                mail to:"mharuni@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "PASSED !!!"
+                mail to:"mharuni@gmail.com", subject:"Build1", body: "PASSED !!!"
         }
         failure {
-            mail to:"mharuni@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "FAILED !!!"
+            mail to:"mharuni@gmail.com", subject:"FAILURE: Build2", body: "FAILED !!!"
         }
             }
         }
