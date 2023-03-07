@@ -27,14 +27,19 @@ pipeline {
             }
         }
         post {
-            success {
-                mail to:"mharuni@gmail.com", subject:"Build1", body: "PASSED"
+        success {
+            mail subject: "Jenkins Build of ${JOB_NAME} with id ${BUILD_ID} is success",
+                body: "Use this URL ${BUILD_URL} for more info",
+                to: 'team-all-qt@qt.com',
+                from: 'devops@qt.com'
         }
-            failure {
-            mail to:"mharuni@gmail.com", subject:"FAILURE: Build2", body: "FAILED"
+        failure {
+            mail subject: "Jenkins Build of ${JOB_NAME} with id ${BUILD_ID} is failed",
+                body: "Use this URL ${BUILD_URL} for more info",
+                to: "${GIT_AUTHOR_EMAIL}",
+                from: 'devops@qt.com'
         }
-
-        }
+    }
     
     }
 }
