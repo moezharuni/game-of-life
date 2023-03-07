@@ -26,7 +26,7 @@ pipeline {
                 archiveArtifacts artifacts: '**/target/gameoflife.war'
             }
         }
-        post {
+    post {
         success {
             mail subject: "Jenkins Build of ${JOB_NAME} with id ${BUILD_ID} is success",
                 body: "Use this URL ${BUILD_URL} for more info",
