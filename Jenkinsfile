@@ -27,6 +27,7 @@ pipeline {
                 junit '**/surefire-reports/*.xml'
             }
         }
+    }
     post {
         success {
             mail subject: "Build1",
@@ -41,5 +42,4 @@ pipeline {
             from: "qtdevops@gmail.com" 
             }
         }
-    }
 }
