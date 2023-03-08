@@ -16,11 +16,12 @@ pipeline {
             steps {
                 sh "mvn ${params.MAVEN_GOAL}"
             }
+        }
         stage ('sonar'){
             steps {
-              withSonarQubeEnv('SONAR_CLOUD') {
+                withSonarQubeEnv('My SonarQube Server') {
                 sh 'mvn clean package sonar:sonar'
-        }
+            }
         }
         stage ('archive') {
             steps {
