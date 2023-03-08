@@ -22,7 +22,7 @@ pipeline {
         }
         stage ('unit test') {
             steps {
-                junit: '**/target/*.war'
+                junit '**/*.war'
             }
         }
     }
