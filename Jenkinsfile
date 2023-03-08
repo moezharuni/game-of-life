@@ -17,7 +17,6 @@ pipeline {
         }
         stage ('archive') {
             steps {
-                junit '**/gameoflife.war',
                 archiveArtifacts artifacts: '**/surefire-reports/*.xml'
             }
         }
