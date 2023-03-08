@@ -30,14 +30,14 @@ pipeline {
     }
     post {
         success {
-            mail subject: "Build1",
-            body: "Build1 in results",
+            mail subject: "Build1 success",
+            body: "Build1 success",
             to: "mharuni16@gmail.com",
             from: "qtdevops@gmail.com"
             }
         failure {
-            mail subject: "Build1",
-            body: "Build1 in results",
+            mail subject: "Build1 failed",
+            body: "Build1 failed",
             to: "mharuni16@gmail.com",
             from: "qtdevops@gmail.com" 
             }
