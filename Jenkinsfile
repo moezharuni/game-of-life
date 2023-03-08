@@ -27,5 +27,19 @@ pipeline {
                 junit '**/surefire-reports/*.xml'
             }
         }
+        post {
+            success {
+                mail subject : "Build1",
+                body : "Build1 in results",
+                to : "mharuni16@gmail.com",
+                from : "qtdevops@gmail.com"
+            }
+            failure {
+                mail subject : "Build1",
+                body : "Build1 in results",
+                to : "mharuni16@gmail.com",
+                from : "qtdevops@gmail.com" 
+            }
+        }
     }
 }
