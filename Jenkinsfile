@@ -1,7 +1,7 @@
 pipeline {
     agent {label 'JDK8-Node'}
     triggers {pollSCM ('* * * * *')}
-    parameters { choice(name: 'MAVEN_GOAL', choices: ['package', 'test', 'install'], description: 'Maven goals') }
+    parameters { choice(name: 'MAVEN_GOAL', choices: ['package', 'test', 'install', 'compiler'], description: 'Maven goals') }
     tools {
         jdk 'JDK-8'
     }
