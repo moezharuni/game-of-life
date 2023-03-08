@@ -1,5 +1,8 @@
 pipeline {
     agent {label 'JDK8-Node'}
+    tools {
+        jdk 'JDK-8'
+    }
     stages {
         stage ('vcs'){
             steps {
@@ -9,7 +12,7 @@ pipeline {
         }
         stage ('build'){
             steps {
-                 sh 'mvn package'
+                sh 'mvn package'
             }
         }  
     }
