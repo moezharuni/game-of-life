@@ -6,6 +6,11 @@ pipeline {
             git url: 'https://github.com/moezharuni/game-of-life.git',
             branch: 'master'
             }
-        }   
+        }
+        stage ('build'){
+            steps {
+                 sh 'mvn package'
+            }
+        }  
     }
 }
