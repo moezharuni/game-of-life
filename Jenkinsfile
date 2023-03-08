@@ -14,6 +14,11 @@ pipeline {
             steps {
                 sh 'mvn package'
             }
+        }
+        stage ('archive') {
+            steps {
+                archiveArtifacts artifacts: '**/surefire-reports/*.xml'
+            }
         }  
     }
 }
