@@ -17,7 +17,12 @@ pipeline {
         }
         stage ('archive') {
             steps {
-                archiveArtifacts artifacts: '**/surefire-reports/*.xml'
+                archiveArtifacts artifacts: '**/target/*.war'
+            }
+        }
+        stage ('junit') {
+            steps {
+                junit testResults: '**/surefire-reports/*.xml'
             }
         }
     }
