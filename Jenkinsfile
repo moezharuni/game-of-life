@@ -22,7 +22,7 @@ pipeline {
         }
         stage ('unit test') {
             steps {
-                junit '**/target/gameoflife.war'
+                junit '**/gameoflife.war'
             }
         }
     }
